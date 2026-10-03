@@ -96,11 +96,19 @@ em {
   inset: 0 0 auto 0;
   height: var(--header-h);
   z-index: 50;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+/* frosted background lives on a pseudo-element: backdrop-filter on the
+   header itself would trap the fixed mobile menu inside the header bar */
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background: rgba(251, 246, 240, 0.82);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.3s, box-shadow 0.3s;
 }
 .site-header.is-scrolled { border-color: var(--line); box-shadow: 0 8px 30px -20px rgba(31, 26, 23, 0.3); }
 
@@ -591,8 +599,13 @@ em {
     inset: 0;
     z-index: 1;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     gap: 26px;
+    height: 100vh;
+    height: 100dvh;
+    padding: var(--header-h) 24px 40px;
+    overflow-y: auto;
     background: var(--cream);
     opacity: 0;
     visibility: hidden;
@@ -602,6 +615,8 @@ em {
   .site-nav .btn { margin-top: 12px; padding: 16px 32px; font-size: 16px; }
   .menu-open .site-nav { opacity: 1; visibility: visible; }
   .menu-open { overflow: hidden; }
+  .menu-open .site-header { border-color: transparent; box-shadow: none; }
+  .menu-open .wa-float { opacity: 0; pointer-events: none; }
   .brand { position: relative; z-index: 2; }
 
   .section { padding: 84px 0; }
