@@ -9,7 +9,10 @@
  * ============================================================
  */
 window.SITE_CONFIG = {
-  // Google Form link for the "Join" / "Apply" buttons.
+  // Application form for Group Coaching ("Join the group" button)
+  groupFormUrl: "https://form.ms/7gaxpu",
+
+  // Application form for 1 on 1 Coaching and the general "Join" buttons.
   // Until this is filled in, those buttons scroll to the Contact section.
   joinFormUrl: "",
 

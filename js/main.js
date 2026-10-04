@@ -5,10 +5,12 @@
     Array.prototype.forEach.call(document.querySelectorAll(selector), fn);
   }
 
-  // ---- Join buttons -> Google Form (falls back to #contact until a link is set)
+  // ---- Join buttons -> application form (falls back to #contact until a link is set)
+  // data-join="group" uses the Group Coaching form; other join buttons use joinFormUrl.
   each("[data-join]", function (el) {
-    if (cfg.joinFormUrl) {
-      el.href = cfg.joinFormUrl;
+    var url = el.getAttribute("data-join") === "group" ? cfg.groupFormUrl : cfg.joinFormUrl;
+    if (url) {
+      el.href = url;
       el.target = "_blank";
       el.rel = "noopener";
     } else if (el.hasAttribute("data-join-only")) {
