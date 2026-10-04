@@ -8,8 +8,8 @@ All contact details and links are in **`js/config.js`**:
 
 | Setting | What it does |
 | --- | --- |
-| `groupFormUrl` | Application form for the Group Coaching "Join the group" button |
-| `joinFormUrl` | Application form for 1 on 1 Coaching and the other "Join now" / "Apply now" buttons. Until it's set, those buttons scroll to the Contact section. |
+| `groupFormUrl` | Application form for Group Coaching ("Join the group" and "Apply for Group Coaching" buttons) |
+| `oneOnOneFormUrl` | Application form for 1 on 1 Coaching ("Apply now" and "Apply for 1 on 1 Coaching" buttons) |
 | `phoneDisplay` / `phoneLink` | Phone number shown on the site and used for the "Call" link |
 | `whatsapp` / `whatsappMessage` | WhatsApp number (digits only, with country code) and the pre-filled message |
 | `email` | Email address. The Email card stays hidden until you fill this in. |

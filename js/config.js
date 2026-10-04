@@ -9,12 +9,13 @@
  * ============================================================
  */
 window.SITE_CONFIG = {
+  // Application forms. Leave one as "" to make its buttons scroll to Contact instead.
+
   // Application form for Group Coaching ("Join the group" button)
   groupFormUrl: "https://form.ms/7gaxpu",
 
-  // Application form for 1 on 1 Coaching and the general "Join" buttons.
-  // Until this is filled in, those buttons scroll to the Contact section.
-  joinFormUrl: "",
+  // Application form for 1 on 1 Coaching ("Apply now" button)
+  oneOnOneFormUrl: "https://form.ms/46dv2f",
 
   // Phone number as shown on the site
   phoneDisplay: "+91 80566 14555",

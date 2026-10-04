@@ -6,9 +6,10 @@
   }
 
   // ---- Join buttons -> application form (falls back to #contact until a link is set)
-  // data-join="group" uses the Group Coaching form; other join buttons use joinFormUrl.
+  // data-join="group" uses the Group Coaching form, data-join="one-on-one" the 1 on 1 form.
+  var forms = { "group": cfg.groupFormUrl, "one-on-one": cfg.oneOnOneFormUrl };
   each("[data-join]", function (el) {
-    var url = el.getAttribute("data-join") === "group" ? cfg.groupFormUrl : cfg.joinFormUrl;
+    var url = forms[el.getAttribute("data-join")];
     if (url) {
       el.href = url;
       el.target = "_blank";

@@ -504,6 +504,7 @@ em {
   margin-bottom: 22px;
 }
 .cta-lead { max-width: 520px; color: var(--ink-soft); font-size: 18px; margin-bottom: 36px; }
+.cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
 
 .contact-grid {
   display: flex;
@@ -634,7 +635,7 @@ em {
   .brand-name { font-size: 16px; }
   .brand-mark { width: 36px; height: 36px; font-size: 21px; }
   .hero { padding-top: calc(var(--header-h) + 36px); }
-  .hero-actions .btn { width: 100%; }
+  .hero-actions .btn, .cta-actions .btn { width: 100%; }
   .steps, .feature-grid { grid-template-columns: 1fr; }
   .feature { padding: 34px 26px; }
   .program-card { padding: 34px 24px 26px; }
