@@ -679,6 +679,7 @@ em {
   transition: background 0.35s, color 0.35s, transform 0.45s var(--ease);
 }
 .step-marker svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.step-marker .icon-fill { width: 32px; height: 32px; fill: currentColor; stroke: none; }
 .step:hover .step-marker { background: var(--rose); color: var(--white); border-color: var(--rose); transform: scale(1.08); }
 
 .step-card {
@@ -955,6 +956,7 @@ em {
   .step { display: grid; grid-template-columns: var(--marker) 1fr; gap: 16px; align-items: start; }
   .step-marker { margin-bottom: 0; box-shadow: 0 0 0 6px var(--cream); }
   .step-marker svg { width: 22px; height: 22px; }
+  .step-marker .icon-fill { width: 27px; height: 27px; }
   .step-card { padding: 22px 20px 20px; }
   .step-num { font-size: 60px; }
   .feature { padding: 34px 26px; }
