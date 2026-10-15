@@ -401,23 +401,26 @@ em {
   gap: 8px;
   align-self: flex-start;
   margin-top: 20px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--rose-deep);
-  text-decoration: none;
+  padding: 0 0 1px;
+  border: 0;
   border-bottom: 1.5px solid currentColor;
-  padding-bottom: 1px;
+  background: none;
+  font: 600 14px/1.5 var(--sans);
+  color: var(--rose-deep);
+  cursor: pointer;
 }
+.cert-view:hover { color: var(--rose); }
+.cert-view:focus-visible { outline: 2px solid var(--rose); outline-offset: 4px; border-radius: 2px; }
 .cert-view svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
-/* certificate photo pops up inside the card while hovering "View certificate" (mouse / trackpad only) */
+/* certificate pops up inside the card when "View certificate" is clicked */
 .cert-preview {
   position: absolute;
   left: 50%;
   bottom: 62px;
   z-index: 3;
   width: min(380px, 86%);
-  padding: 10px;
+  padding: 10px 10px 8px;
   border-radius: 18px;
   background: var(--white);
   box-shadow: 0 30px 70px -24px rgba(31, 26, 23, 0.45);
@@ -425,22 +428,17 @@ em {
   visibility: hidden;
   transform: translate(-50%, 18px) rotate(-2deg) scale(0.94);
   transform-origin: 50% 100%;
-  transition: opacity 0.35s ease, transform 0.5s var(--ease), visibility 0s linear 0.5s;
-  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.45s var(--ease), visibility 0s linear 0.45s;
 }
+.cert-card.is-open .cert-preview {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0) rotate(-2deg) scale(1);
+  transition: opacity 0.3s ease, transform 0.45s var(--ease), visibility 0s;
+}
+.cert-preview a { display: block; cursor: zoom-in; }
 .cert-preview img { width: 100%; height: auto; border-radius: 10px; }
-@media (hover: hover) {
-  .cert-view:hover + .cert-preview,
-  .cert-view:focus-visible + .cert-preview {
-    opacity: 1;
-    visibility: visible;
-    transform: translate(-50%, 0) rotate(-2deg) scale(1);
-    transition: opacity 0.35s ease, transform 0.5s var(--ease), visibility 0s;
-  }
-}
-@media (hover: none) {
-  .cert-preview { display: none; }
-}
+.cert-preview-hint { display: block; margin-top: 6px; text-align: center; font-size: 12px; color: var(--muted); }
 
 /* ---------- programs ---------- */
 @property --ring-angle {

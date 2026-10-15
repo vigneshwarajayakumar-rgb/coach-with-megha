@@ -110,6 +110,34 @@
     });
   });
 
+  // ---- Certifications: "View certificate" shows the certificate inside its card
+  function closeCerts() {
+    each(".cert-card.is-open", function (card) {
+      card.classList.remove("is-open");
+      var btn = card.querySelector(".cert-view");
+      btn.setAttribute("aria-expanded", "false");
+      btn.querySelector(".cert-view-label").textContent = "View certificate";
+    });
+  }
+  each(".cert-view", function (btn) {
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var card = btn.closest(".cert-card");
+      var opening = !card.classList.contains("is-open");
+      closeCerts();
+      if (!opening) return;
+      card.classList.add("is-open");
+      btn.setAttribute("aria-expanded", "true");
+      btn.querySelector(".cert-view-label").textContent = "Hide certificate";
+    });
+  });
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".cert-preview")) closeCerts();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeCerts();
+  });
+
   // ---- FAQ: keep one open at a time
   each(".faq", function (item) {
     item.addEventListener("toggle", function () {
