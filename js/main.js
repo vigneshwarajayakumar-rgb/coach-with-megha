@@ -101,6 +101,15 @@
     Array.prototype.forEach.call(items, function (el) { io.observe(el); });
   }
 
+  // ---- Program cards: soft light follows the cursor
+  each("[data-spotlight]", function (card) {
+    card.addEventListener("pointermove", function (e) {
+      var r = card.getBoundingClientRect();
+      card.style.setProperty("--mx", (e.clientX - r.left) + "px");
+      card.style.setProperty("--my", (e.clientY - r.top) + "px");
+    });
+  });
+
   // ---- FAQ: keep one open at a time
   each(".faq", function (item) {
     item.addEventListener("toggle", function () {
