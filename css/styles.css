@@ -732,17 +732,6 @@ em {
 .step--goal p { color: rgba(251, 246, 240, 0.75); }
 .step--goal:hover .step-card { border-color: var(--ink); }
 
-.how-cta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 14px 28px;
-  margin-top: 56px;
-}
-.how-cta-link { font-size: 15px; color: var(--ink-soft); text-decoration: none; }
-.how-cta-link strong { color: var(--rose-deep); border-bottom: 1.5px solid currentColor; }
-.how-cta-link:hover strong { color: var(--rose); }
 
 /* ---------- features ---------- */
 .feature-grid {
@@ -968,8 +957,6 @@ em {
   .step-marker svg { width: 22px; height: 22px; }
   .step-card { padding: 22px 20px 20px; }
   .step-num { font-size: 60px; }
-  .how-cta { flex-direction: column; gap: 16px; }
-  .how-cta .btn { width: 100%; }
   .feature { padding: 34px 26px; }
   .program-card { padding: 24px 20px 22px; }
   .program-grid .program-card:hover { transform: none; }
