@@ -138,13 +138,7 @@
                 <div><dt>Issued by</dt><dd>ACFIT Academy for Fitness Professionals (AAFP), a Skill India training partner</dd></div>
                 <div><dt>Certified</dt><dd>2025</dd></div>
               </dl>
-              <button type="button" class="cert-view" aria-expanded="false" aria-controls="cert-preview-1"><span class="cert-view-label">View certificate</span> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button>
-              <div class="cert-preview" id="cert-preview-1">
-                <a href="images/cert-cfr-pro.jpg" target="_blank" rel="noopener" aria-label="Open the CFR PRO certificate full size">
-                  <img src="images/cert-cfr-pro.jpg" alt="CFR PRO Professional Fitness Trainer certificate awarded to Megha Sendhil" width="1600" height="1171" loading="lazy" decoding="async">
-                </a>
-                <span class="cert-preview-hint">Tap or click to enlarge</span>
-              </div>
+              <button type="button" class="cert-view" aria-haspopup="dialog" data-cert-src="images/cert-cfr-pro.jpg" data-cert-title="CFR PRO Certified Fitness Trainer" data-cert-alt="CFR PRO Professional Fitness Trainer certificate awarded to Megha Sendhil">View certificate <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button>
             </div>
           </article>
 
@@ -163,13 +157,7 @@
                 <div><dt>Issued by</dt><dd>VMEDO Academy, an American Heart Association accredited satellite training site</dd></div>
                 <div><dt>Valid until</dt><dd>March 2029</dd></div>
               </dl>
-              <button type="button" class="cert-view" aria-expanded="false" aria-controls="cert-preview-2"><span class="cert-view-label">View certificate</span> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button>
-              <div class="cert-preview" id="cert-preview-2">
-                <a href="images/cert-first-aid.jpg" target="_blank" rel="noopener" aria-label="Open the First Aid certificate full size">
-                  <img src="images/cert-first-aid.jpg" alt="VMEDO Academy Basic First Aid certificate of completion awarded to Megha Sendhil" width="1600" height="1129" loading="lazy" decoding="async">
-                </a>
-                <span class="cert-preview-hint">Tap or click to enlarge</span>
-              </div>
+              <button type="button" class="cert-view" aria-haspopup="dialog" data-cert-src="images/cert-first-aid.jpg" data-cert-title="Basic First Aid &amp; CPR" data-cert-alt="VMEDO Academy Basic First Aid certificate of completion awarded to Megha Sendhil">View certificate <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button>
             </div>
           </article>
         </div>
@@ -510,6 +498,17 @@
   <a href="#" class="wa-float" data-whatsapp target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.3Z"/></svg>
   </a>
+
+  <!-- certificate pop-up (filled in by js/main.js) -->
+  <dialog class="cert-dialog" id="certDialog" aria-label="Certificate">
+    <button type="button" class="cert-dialog-close" aria-label="Close">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <a class="cert-dialog-link" href="#" target="_blank" rel="noopener">
+      <img class="cert-dialog-img" src="data:," alt="">
+    </a>
+    <p class="cert-dialog-caption"><strong class="cert-dialog-title"></strong> · Tap or click it to open full size</p>
+  </dialog>
 
   <script src="js/config.js"></script>
   <script src="js/main.js"></script>

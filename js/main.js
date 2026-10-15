@@ -110,33 +110,39 @@
     });
   });
 
-  // ---- Certifications: "View certificate" shows the certificate inside its card
-  function closeCerts() {
-    each(".cert-card.is-open", function (card) {
-      card.classList.remove("is-open");
-      var btn = card.querySelector(".cert-view");
-      btn.setAttribute("aria-expanded", "false");
-      btn.querySelector(".cert-view-label").textContent = "View certificate";
+  // ---- Certifications: "View certificate" opens the certificate in a pop-up
+  var certDialog = document.getElementById("certDialog");
+  if (certDialog && typeof certDialog.showModal === "function") {
+    var certImg = certDialog.querySelector(".cert-dialog-img");
+    var certLink = certDialog.querySelector(".cert-dialog-link");
+    var certTitle = certDialog.querySelector(".cert-dialog-title");
+    each(".cert-view", function (btn) {
+      btn.addEventListener("click", function () {
+        certImg.src = btn.getAttribute("data-cert-src");
+        certImg.alt = btn.getAttribute("data-cert-alt");
+        certLink.href = btn.getAttribute("data-cert-src");
+        certTitle.textContent = btn.getAttribute("data-cert-title");
+        certDialog.setAttribute("aria-label", btn.getAttribute("data-cert-title") + " certificate");
+        certDialog.showModal();
+      });
+    });
+    certDialog.querySelector(".cert-dialog-close").addEventListener("click", function () {
+      certDialog.close();
+    });
+    // a click on the dimmed area outside the pop-up closes it
+    certDialog.addEventListener("click", function (e) {
+      var r = certDialog.getBoundingClientRect();
+      var outside = e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
+      if (outside) certDialog.close();
+    });
+  } else {
+    // very old browsers: just open the certificate image
+    each(".cert-view", function (btn) {
+      btn.addEventListener("click", function () {
+        window.open(btn.getAttribute("data-cert-src"), "_blank", "noopener");
+      });
     });
   }
-  each(".cert-view", function (btn) {
-    btn.addEventListener("click", function (e) {
-      e.stopPropagation();
-      var card = btn.closest(".cert-card");
-      var opening = !card.classList.contains("is-open");
-      closeCerts();
-      if (!opening) return;
-      card.classList.add("is-open");
-      btn.setAttribute("aria-expanded", "true");
-      btn.querySelector(".cert-view-label").textContent = "Hide certificate";
-    });
-  });
-  document.addEventListener("click", function (e) {
-    if (!e.target.closest(".cert-preview")) closeCerts();
-  });
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") closeCerts();
-  });
 
   // ---- FAQ: keep one open at a time
   each(".faq", function (item) {
