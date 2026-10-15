@@ -1,6 +1,6 @@
-# Move with Megha
+# Coach with Megha
 
-Website for **Move with Megha** online fitness coaching. It's a static site in plain **HTML, CSS and JavaScript** with no build step, hosted on **Vercel** from its own GitHub repository.
+Website for **Coach with Megha** online fitness coaching. It's a static site in plain **HTML, CSS and JavaScript** with no build step, hosted on **Vercel** from its own GitHub repository.
 
 ## Update the website (no coding needed)
 
@@ -24,7 +24,7 @@ You can edit the page text (programs, FAQ, About) directly in `index.html` the s
 2. Leave Root Directory as the default (`./`).
 3. Leave Framework Preset as **Other**, with no build command.
 4. Click **Deploy**. Every push to GitHub then updates the site automatically.
-5. Optional: add your own domain (e.g. `movewithmegha.com`) under Project → Settings → Domains.
+5. Optional: add your own domain (e.g. `coachwithmegha.com`) under Project → Settings → Domains.
 
 ## Run locally
 
