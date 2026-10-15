@@ -356,7 +356,7 @@ em {
 .cert-card {
   position: relative;
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 20px;
   padding: 30px 30px 28px;
   border-radius: var(--radius);
@@ -389,8 +389,8 @@ em {
   color: var(--rose-deep);
 }
 .cert-body h3 { font: 400 26px/1.15 var(--serif); letter-spacing: -0.01em; margin-bottom: 12px; }
-.cert-body p { color: var(--ink-soft); font-size: 15.5px; }
-.cert-meta { display: grid; gap: 8px; margin: 4px 0 0; padding-top: 18px; border-top: 1px solid var(--line); }
+.cert-body p { margin-bottom: 18px; color: var(--ink-soft); font-size: 15.5px; }
+.cert-meta { display: grid; gap: 8px; margin: auto 0 0; padding-top: 18px; border-top: 1px solid var(--line); }
 .cert-meta div { display: grid; grid-template-columns: 92px 1fr; gap: 12px; font-size: 14.5px; }
 .cert-meta dt { font-weight: 700; color: var(--ink); }
 .cert-meta dd { margin: 0; color: var(--ink-soft); }
