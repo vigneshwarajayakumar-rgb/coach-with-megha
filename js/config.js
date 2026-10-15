@@ -1,6 +1,6 @@
 /*
  * ============================================================
- *  COACH WITH MEGHA — SITE SETTINGS
+ *  MOVE WITH MEGHA — SITE SETTINGS
  *  Edit the values below to update the website.
  *  (On GitHub: open this file → click the pencil icon → edit →
  *   "Commit changes". Vercel redeploys automatically.)
@@ -29,9 +29,9 @@ window.SITE_CONFIG = {
   // Pre-filled WhatsApp message
   whatsappMessage: "Hi Megha! I'd like to know more about your coaching.",
 
-  // Email address, e.g. "hello@coachwithmegha.com"
+  // Email address, e.g. "hello@movewithmegha.com"
   email: "",
 
-  // Instagram handle WITHOUT the @, e.g. "coachwithmegha"
+  // Instagram handle WITHOUT the @, e.g. "movewithmegha"
   instagram: ""
 };
