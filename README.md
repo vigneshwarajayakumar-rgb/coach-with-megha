@@ -8,7 +8,6 @@ All contact details and links are in **`js/config.js`**:
 
 | Setting | What it does |
 | --- | --- |
-| `groupFormUrl` | Application form for Group Coaching ("Join the group" and "Apply for Group Coaching" buttons) |
 | `oneOnOneFormUrl` | Application form for 1 on 1 Coaching ("Apply now" and "Apply for 1 on 1 Coaching" buttons) |
 | `phoneDisplay` / `phoneLink` | Phone number shown on the site and used for the "Call" link |
 | `whatsapp` / `whatsappMessage` | WhatsApp number (digits only, with country code) and the pre-filled message |

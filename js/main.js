@@ -6,8 +6,8 @@
   }
 
   // ---- Join buttons -> application form (falls back to #contact until a link is set)
-  // data-join="group" uses the Group Coaching form, data-join="one-on-one" the 1 on 1 form.
-  var forms = { "group": cfg.groupFormUrl, "one-on-one": cfg.oneOnOneFormUrl };
+  // data-join="one-on-one" uses the 1 on 1 form.
+  var forms = { "one-on-one": cfg.oneOnOneFormUrl };
   each("[data-join]", function (el) {
     var url = forms[el.getAttribute("data-join")];
     if (url) {
@@ -22,7 +22,9 @@
   // ---- WhatsApp
   each("[data-whatsapp]", function (el) {
     if (!cfg.whatsapp) { el.hidden = true; return; }
-    var msg = cfg.whatsappMessage ? "?text=" + encodeURIComponent(cfg.whatsappMessage) : "";
+    // A button can set its own pre-filled message with data-whatsapp-message.
+    var text = el.getAttribute("data-whatsapp-message") || cfg.whatsappMessage;
+    var msg = text ? "?text=" + encodeURIComponent(text) : "";
     el.href = "https://wa.me/" + cfg.whatsapp + msg;
   });
 
