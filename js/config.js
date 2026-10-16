@@ -11,7 +11,7 @@
 window.SITE_CONFIG = {
   // Application form for 1 on 1 Coaching ("Apply now" button).
   // Leave as "" to make its buttons scroll to Contact instead.
-  oneOnOneFormUrl: "https://form.ms/46dv2f",
+  oneOnOneFormUrl: "https://form.ms/ea4q3m",
 
   // Phone number as shown on the site
   phoneDisplay: "+91 80566 14555",
