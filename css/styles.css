@@ -563,7 +563,7 @@ html:has(.cert-dialog[open]) { overflow: hidden; }
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 .program-icon {
   display: grid;
@@ -614,18 +614,49 @@ html:has(.cert-dialog[open]) { overflow: hidden; }
 .program-desc { position: relative; max-width: 40ch; margin-bottom: 14px; font-size: 15px; line-height: 1.55; color: var(--ink-soft); }
 .program-card--premium .program-desc { color: rgba(251, 246, 240, 0.72); }
 
+/* plan length switch on the 1 on 1 card */
+.plan-switch {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  margin: 0 0 12px;
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--sand);
+}
+.plan-switch button {
+  padding: 8px 6px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  font: 600 13px/1 var(--sans);
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+.plan-switch button:hover { color: var(--ink); background: rgba(255, 255, 255, 0.6); }
+.plan-switch button.is-active {
+  background: var(--ink);
+  color: var(--cream);
+  box-shadow: 0 8px 18px -10px rgba(31, 26, 23, 0.7);
+}
+.plan-switch button:focus-visible { outline: 2px solid var(--rose); outline-offset: 2px; }
+.program-stats strong.is-changing { animation: plan-tick 0.4s var(--ease); }
+@keyframes plan-tick { from { opacity: 0; transform: translateY(8px); } }
+
 .program-stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 0 0 18px;
+  margin: 0 0 16px;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 .program-card--premium .program-stats { border-color: rgba(251, 246, 240, 0.14); }
-.program-stats div { display: flex; flex-direction: column; gap: 4px; padding: 12px 0; }
+.program-stats div { display: flex; flex-direction: column; gap: 4px; padding: 10px 0; }
 .program-stats div + div { padding-left: 20px; border-left: 1px solid var(--line); }
 .program-card--premium .program-stats div + div { border-color: rgba(251, 246, 240, 0.14); }
-.program-stats strong { font: italic 400 34px/1 var(--serif); color: var(--rose); }
+.program-stats strong { display: inline-block; font: italic 400 34px/1 var(--serif); color: var(--rose); }
 .program-card--premium .program-stats strong { color: var(--blush); }
 .program-stats span { font-size: 12px; font-weight: 600; letter-spacing: 0.04em; color: var(--muted); }
 .program-card--premium .program-stats span { color: rgba(251, 246, 240, 0.6); }

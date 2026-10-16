@@ -110,6 +110,47 @@
     });
   });
 
+  // ---- Plan length switch: updates the numbers on its program card
+  each("[data-plan-switch]", function (group) {
+    var card = group.closest(".program-card");
+    var options = group.querySelectorAll("button");
+    function choose(btn) {
+      Array.prototype.forEach.call(options, function (o) {
+        var on = o === btn;
+        o.classList.toggle("is-active", on);
+        o.setAttribute("aria-checked", String(on));
+        o.tabIndex = on ? 0 : -1;
+      });
+      var months = btn.getAttribute("data-months");
+      var values = {
+        "months": months,
+        "months-label": months === "1" ? "month of coaching" : "months of coaching",
+        "sessions": btn.getAttribute("data-sessions")
+      };
+      Array.prototype.forEach.call(card.querySelectorAll("[data-plan]"), function (el) {
+        var value = values[el.getAttribute("data-plan")];
+        if (el.textContent === value) return;
+        el.textContent = value;
+        if (el.tagName === "STRONG") {
+          el.classList.remove("is-changing");
+          void el.offsetWidth;
+          el.classList.add("is-changing");
+        }
+      });
+    }
+    Array.prototype.forEach.call(options, function (btn, i) {
+      btn.addEventListener("click", function () { choose(btn); });
+      btn.addEventListener("keydown", function (e) {
+        var step = e.key === "ArrowRight" || e.key === "ArrowDown" ? 1 : e.key === "ArrowLeft" || e.key === "ArrowUp" ? -1 : 0;
+        if (!step) return;
+        e.preventDefault();
+        var next = options[(i + step + options.length) % options.length];
+        choose(next);
+        next.focus();
+      });
+    });
+  });
+
   // ---- Certifications: "View certificate" opens the certificate in a pop-up
   var certDialog = document.getElementById("certDialog");
   if (certDialog && typeof certDialog.showModal === "function") {
